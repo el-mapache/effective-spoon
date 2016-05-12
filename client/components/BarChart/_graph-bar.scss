@@ -1,0 +1,17 @@
+.graph__bar {
+  position: relative;
+  transition: width 0.2s linear;
+
+  .graph__bar-inner {
+    height: 15px;
+    left: 0px;
+    opacity: 0.66;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .graph__bar-text {
+    color: blue;
+  }
+}
