@@ -13,21 +13,19 @@ class BarChart extends React.Component {
     const {data, barColor} = this.props;
 
     return (
-      <div>
-        <div className="bar__chart-overlaid">
-          {data.map((datum, index) => {
-            const count = datum._count;
+      <div className="bar__chart-overlaid">
+        {data.map((datum, index) => {
+          const count = datum._count;
 
-            return (
-              <GraphBar
-                key={index}
-                text={`${count}`}
-                value={count}
-                backgroundColor={barColor}
-              />
-            );
-          })}
-        </div>
+          return (
+            <GraphBar
+              key={index}
+              text={`${count}`}
+              value={count}
+              backgroundColor={barColor}
+            />
+          );
+        })}
       </div>
     );
   }

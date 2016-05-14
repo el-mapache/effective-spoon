@@ -16,7 +16,7 @@ class AxisLabel extends React.Component {
     super(props);
   }
 
-  getStyles() {
+  getLabelStyles() {
     const { labelSize, orientation } = this.props;
     const styles = {};
     const sizeInPx = `${labelSize}px`;
@@ -25,13 +25,22 @@ class AxisLabel extends React.Component {
 
     return styles;
   }
+
+  getStyles() {
+    const {orientation} = this.props;
+    return {
+      display: 'flex',
+      flexDirection: orientation === orientations.HORIZONTAL ? 'row' : 'column'
+    };
+  }
+
   render() {
     const { labels, labelStyle } = this.props;
 
     return (
-      <div>
+      <div style={this.getStyles()}>
         {labels.map((label, index) => {
-          return <div key={index} style={this.getStyles()}>{label}</div>
+          return <div key={index} style={this.getLabelStyles()}>{label}</div>
         })}
       </div>
     );

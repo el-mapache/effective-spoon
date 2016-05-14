@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 
 const propTypes = {
   backgroundColor: React.PropTypes.string,
@@ -24,8 +24,8 @@ class GraphBar extends React.Component {
   getStyle() {
     const { height, maxWidth } = this.props;
     return {
-      height: `${height}px`,
-      maxWidth: `${maxWidth}px`
+      width: `${height}px`,
+      maxHeight: `${maxWidth}px`
     };
   }
 
@@ -34,7 +34,7 @@ class GraphBar extends React.Component {
 
     return {
       background: backgroundColor,
-      width: `${this.getLnProgress()}px`
+      height: `${this.getLnProgress()}px`
     };
   }
 
@@ -51,7 +51,7 @@ class GraphBar extends React.Component {
 }
 
 GraphBar.defaultProps = {
-  height: '20',
+  height: '12',
   maxWidth: '400',
   value: 0
 };

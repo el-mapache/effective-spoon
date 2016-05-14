@@ -41,19 +41,18 @@ class AccidentDataChart extends React.Component {
       </div>
     );
   }
-//<AxisLabel labelSize={20} labels={states} orientation={'horizontal'} />
+
   render() {
-    //const accidents = this.getAccidentsByStateAndYear();
-    // const states = accidents[0] && Object.keys(accidents[0]) || [];
-    //
+    const states = ['ad','mm','gt'];
+
     return (
       <div style={{display: 'flex', alignContent: 'space-between'}}>
+        <AxisLabel labelSize={20} labels={states} orientation={'vertical'} />
         {this.getVisualization()}
+        <AxisLabel labelSize={20} labels={states} orientation={'horizontal'} />
       </div>
     );
-    return null;
   }
-
 }
 
 AccidentDataChart.propTypes = propTypes;

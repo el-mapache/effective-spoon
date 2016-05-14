@@ -52,6 +52,9 @@ function parseFiles(filePaths,model) {
         var rawAddress = row[1].split(',');
         var stateAndZip = rawAddress.pop();
 
+        if (!rawAddress[0]) {
+          return;
+        }
         var address = rawAddress[0].trim();
         var city = rawAddress[1] && rawAddress[1].trim();
 
